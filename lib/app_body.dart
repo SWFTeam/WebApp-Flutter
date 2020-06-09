@@ -14,7 +14,13 @@ class AppBody extends StatelessWidget {
             child: Container(
               width: MediaQuery.of(context).size.width/5,
               height: MediaQuery.of(context).size.height,
-              color: Colors.deepPurple,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color.fromRGBO(80, 255, 232, 100), Color.fromRGBO(59, 254, 78, 100)],
+                )
+              ),
               child: SideBar(),
             ),
          ),
