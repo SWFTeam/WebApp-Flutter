@@ -1,3 +1,4 @@
+import 'package:Web_backoffice/Routes/data_analysis.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'Side_Bar/side_bar.dart';
@@ -23,7 +24,7 @@ class AppBody extends StatelessWidget {
               width: MediaQuery.of(context).size.width/5,
               height: MediaQuery.of(context).size.height,
               color: Colors.yellow[100],
-              
+              child: DataAnalysis(),
             ),
           ),
 
