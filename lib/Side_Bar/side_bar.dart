@@ -5,8 +5,8 @@ class SideBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          "SWF"
+        Container(
+          height: 200,
         ),
         Container(
           height: 100,
