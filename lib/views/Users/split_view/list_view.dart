@@ -1,0 +1,55 @@
+import 'package:Web_backoffice/services/user_services.dart';
+import 'package:Web_backoffice/views/Users/split_view/user_item.dart';
+import 'package:flutter/material.dart';
+import '../../../model/User.dart';
+class UserList extends StatelessWidget {
+  final ValueChanged<User> userSelectedCallBack;
+
+  const UserList({Key key, this.userSelectedCallBack}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: UserServices.getUsers(),
+      builder: (BuildContext context,  AsyncSnapshot snapshot){
+        switch (snapshot.connectionState) {
+          case ConnectionState.waiting:
+            return Center(
+                  child: CircularProgressIndicator(),
+                );
+            break;
+          case ConnectionState.done:
+          if (snapshot.hasError) {
+                  return Center(
+                    child: Text("Error: ${snapshot.error}"),
+                  );
+                }
+                if (snapshot.hasData) {
+                  final List<User> users = snapshot.data;
+                  if (users.isEmpty) {
+                    return Center(
+                      child: Text("Empty list"),
+                    );
+                  }
+                  return ListView.builder(
+                    itemCount: users.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return UserItem(
+                        user: users[index],
+                        onTapp: () =>userSelectedCallBack(users[index]) ,
+                      );
+                    },
+                  );
+                } else {
+                  return Center(
+                    child: Text("No data"),
+                  );
+                }
+              break;
+          default:
+          return Container();
+                break;
+        }
+      }
+    );
+  }
+}
