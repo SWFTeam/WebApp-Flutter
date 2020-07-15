@@ -1,4 +1,4 @@
-import 'package:Web_backoffice/services/user_services.dart';
+import 'package:Web_backoffice/services/services.dart';
 import 'package:Web_backoffice/views/Users/split_view/user_item.dart';
 import 'package:flutter/material.dart';
 import '../../../model/User.dart';
@@ -9,7 +9,7 @@ class UserList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: UserServices.getUsers(),
+      future: Services.getUsers(),
       builder: (BuildContext context,  AsyncSnapshot snapshot){
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
