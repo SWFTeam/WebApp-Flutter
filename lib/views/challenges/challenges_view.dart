@@ -1,3 +1,4 @@
+import 'package:Web_backoffice/app/routes_names.dart';
 import 'package:Web_backoffice/views/challenges/challenge_item.dart';
 import 'package:Web_backoffice/widgets/custom_scaffold.dart';
 import 'package:flutter/material.dart';
@@ -7,9 +8,8 @@ class ChallengesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  CustomScaffold(
-      pageTitle: "Chalenges page",
-      body: Center(
-        child: DataTable(
+      pageTitle: "Chalenges and Advices page",
+      body: DataTable(
           showCheckboxColumn: true,
             columns: [
               //DataColumn(label: Text("Select")),
@@ -31,29 +31,29 @@ class ChallengesView extends StatelessWidget {
               },
               cells: [
                 DataCell(
-                    GestureDetector(
-                        onTap: ()=>{print("This has Been tapped")},
-                        child: Text("Title")
-                    ),
+                    Text("Go eat Bananas in charlemagnes house")
                 ),
                 DataCell(
-                    Text("Date"),
+                    Text("13/48/3049"),
                 ),
                 DataCell(
-                  Text("Type"),
+                  Text("Humanitarian"),
                 ),
                 DataCell(
                   FlatButton(
-                    child: Icon(
-                      Icons.add,
+                    child: Text(
+                      "Expand"
                     ),
-                    onPressed: null,
+                    onPressed: ()=>{
+                      Navigator.pushNamed(
+                          context,
+                          RoutesNames.challengeDetail)
+                    },
                   ),
                 ),
               ],
             ),
         ]),
-      ),
-    );
+      );
   }
 }

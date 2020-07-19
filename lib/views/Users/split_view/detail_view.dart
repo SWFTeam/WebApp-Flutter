@@ -1,8 +1,9 @@
 import 'package:Web_backoffice/model/User.dart';
+import 'package:Web_backoffice/model/user_alt.dart';
 import 'package:flutter/material.dart';
 
 class DetailView extends StatelessWidget {
-  final User user;
+  final UserAlt user;
 
   const DetailView({Key key, this.user}) : super(key: key);
   @override
@@ -20,25 +21,13 @@ class DetailView extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              'FirstName: ' + user?.user?.firstname,
+              'FirstName: ' + user?.firstname,
             ),
             Text(
-              'Lastname: ' + user?.user?.firstname,
+              'Lastname: ' + user?.firstname,
             ),
             Text(
-              'Mail: ' + user?.user?.emailAddress,
-            ),
-            Text(
-              'Adresse: ' + user?.user?.address?.street + ' ' + user?.user?.address?.city,
-            ),
-            Text(
-              'Work adresse: ' + user?.user?.addressWork?.street + ' ' + user?.user?.addressWork?.city,
-            ),
-            Text(
-              'Has a Bike ?: ' + user?.needs?.hasBike.toString(),
-            ),
-            Text(
-              'Has a car ?: ' + user?.needs?.hasCar.toString(),
+              'Mail: ' + user?.emailAddress,
             ),
           ],
         ),

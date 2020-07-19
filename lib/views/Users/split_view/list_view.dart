@@ -1,9 +1,9 @@
+import 'package:Web_backoffice/model/user_alt.dart';
 import 'package:Web_backoffice/services/services.dart';
 import 'package:Web_backoffice/views/Users/split_view/user_item.dart';
 import 'package:flutter/material.dart';
-import '../../../model/User.dart';
 class UserList extends StatelessWidget {
-  final ValueChanged<User> userSelectedCallBack;
+  final ValueChanged<UserAlt> userSelectedCallBack;
 
   const UserList({Key key, this.userSelectedCallBack}) : super(key: key);
   @override
@@ -24,7 +24,7 @@ class UserList extends StatelessWidget {
                   );
                 }
                 if (snapshot.hasData) {
-                  final List<User> users = snapshot.data;
+                  final List<UserAlt> users = snapshot.data;
                   if (users.isEmpty) {
                     return Center(
                       child: Text("Empty list"),

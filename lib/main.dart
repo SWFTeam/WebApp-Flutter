@@ -1,4 +1,5 @@
 import 'package:Web_backoffice/views/Users/users_view.dart';
+import 'package:Web_backoffice/views/challenges/challenge_detail.dart';
 import 'package:Web_backoffice/views/challenges/challenges_view.dart';
 import 'package:Web_backoffice/views/experimentation/experimentation_view.dart';
 import 'package:Web_backoffice/views/home/home_view.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         RoutesNames.challenges:(_)=>ChallengesView(), 
         RoutesNames.issues:(_)=>IssuesView(),
         RoutesNames.experiementation:(_)=>ExperimentationView(),
+        RoutesNames.challengeDetail:(challenge)=>ChallengeDetail(),
       },
     );
   }
