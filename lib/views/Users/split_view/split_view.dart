@@ -10,7 +10,7 @@ class SplitView extends StatefulWidget {
 }
 
 class _SplitViewState extends State<SplitView> {
-  UserAlt _selectedUser;
+  User _selectedUser;
   @override
   Widget build(BuildContext context) {
     return Row(

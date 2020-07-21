@@ -3,7 +3,7 @@ import 'package:Web_backoffice/model/user_alt.dart';
 import 'package:flutter/material.dart';
 
 class UserItem extends StatelessWidget {
-  final UserAlt user;
+  final User user;
   final Function onTapp;
   const UserItem({
     Key key,
@@ -15,7 +15,7 @@ class UserItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Icon(Icons.person),
-      title: Text("${user.firstname} ${user.lastname}"),
+      title: Text("${user?.user?.firstname} ${user?.user?.lastname}"),
       onTap: onTapp
     );
   }

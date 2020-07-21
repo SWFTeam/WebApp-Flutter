@@ -1,9 +1,10 @@
+import 'package:Web_backoffice/model/User.dart';
 import 'package:Web_backoffice/model/user_alt.dart';
 import 'package:Web_backoffice/services/services.dart';
 import 'package:Web_backoffice/views/Users/split_view/user_item.dart';
 import 'package:flutter/material.dart';
 class UserList extends StatelessWidget {
-  final ValueChanged<UserAlt> userSelectedCallBack;
+  final ValueChanged<User> userSelectedCallBack;
 
   const UserList({Key key, this.userSelectedCallBack}) : super(key: key);
   @override
@@ -19,12 +20,13 @@ class UserList extends StatelessWidget {
             break;
           case ConnectionState.done:
           if (snapshot.hasError) {
+                  print(snapshot.error);
                   return Center(
                     child: Text("Error: ${snapshot.error}"),
                   );
                 }
                 if (snapshot.hasData) {
-                  final List<UserAlt> users = snapshot.data;
+                  final List<User> users = snapshot.data;
                   if (users.isEmpty) {
                     return Center(
                       child: Text("Empty list"),

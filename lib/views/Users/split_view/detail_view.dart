@@ -3,7 +3,7 @@ import 'package:Web_backoffice/model/user_alt.dart';
 import 'package:flutter/material.dart';
 
 class DetailView extends StatelessWidget {
-  final UserAlt user;
+  final User user;
 
   const DetailView({Key key, this.user}) : super(key: key);
   @override
@@ -21,13 +21,13 @@ class DetailView extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              'FirstName: ' + user?.firstname,
+              'FirstName: ' + user?.user?.firstname,
             ),
             Text(
-              'Lastname: ' + user?.firstname,
+              'Lastname: ' + user?.user?.lastname,
             ),
             Text(
-              'Mail: ' + user?.emailAddress,
+              'Mail: ' + user?.user.emailAddress,
             ),
           ],
         ),

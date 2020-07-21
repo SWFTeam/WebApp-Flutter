@@ -1,15 +1,11 @@
 // To parse this JSON data, do
 //
-//     final userAlt = userAltFromJson(jsonString);
+//     final userResponse = userResponseFromJson(jsonString);
 
 import 'dart:convert';
 
-List<UserAlt> userAltFromJson(String str) => List<UserAlt>.from(json.decode(str).map((x) => UserAlt.fromJson(x)));
-
-String userAltToJson(List<UserAlt> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
-class UserAlt {
-  UserAlt({
+class UserResponse {
+  UserResponse({
     this.id,
     this.firstname,
     this.lastname,
@@ -33,11 +29,15 @@ class UserAlt {
   int addressId;
   int surveyId;
   int addressWork;
-  dynamic isAdmin;
+  int isAdmin;
   DateTime lastLoginAt;
   DateTime createdAt;
 
-  factory UserAlt.fromJson(Map<String, dynamic> json) => UserAlt(
+  factory UserResponse.fromRawJson(String str) => UserResponse.fromJson(json.decode(str));
+
+  String toRawJson() => json.encode(toJson());
+
+  factory UserResponse.fromJson(Map<String, dynamic> json) => UserResponse(
     id: json["id"],
     firstname: json["firstname"],
     lastname: json["lastname"],
@@ -47,7 +47,7 @@ class UserAlt {
     addressId: json["address_id"],
     surveyId: json["survey_id"],
     addressWork: json["address_work"] == null ? null : json["address_work"],
-    isAdmin: json["isAdmin"],
+    isAdmin: json["isAdmin"] == null ? null : json["isAdmin"],
     lastLoginAt: json["last_login_at"] == null ? null : DateTime.parse(json["last_login_at"]),
     createdAt: json["created_at"] == null ? null : DateTime.parse(json["created_at"]),
   );
@@ -58,12 +58,12 @@ class UserAlt {
     "lastname": lastname,
     "email_address": emailAddress,
     "password": password,
-    "birthday": birthday == null ? null : birthday.toIso8601String(),
+    "birthday": birthday == null ? null : birthday.toUtc(),
     "address_id": addressId,
     "survey_id": surveyId,
     "address_work": addressWork == null ? null : addressWork,
-    "isAdmin": isAdmin,
-    "last_login_at": lastLoginAt == null ? null : lastLoginAt.toIso8601String(),
-    "created_at": createdAt == null ? null : createdAt.toIso8601String(),
+    "isAdmin": isAdmin == null ? null : isAdmin,
+    "last_login_at": lastLoginAt == null ? null : lastLoginAt.toLocal(),
+    "created_at": createdAt == null ? null : createdAt.toLocal(),
   };
 }

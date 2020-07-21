@@ -54,7 +54,7 @@ flutter:
         - asset: fonts/Lato-Bold.ttf
         
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  #assets:
   #  - image: assets/images/undraw_under_construction_46pa.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see

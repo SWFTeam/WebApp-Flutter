@@ -1,4 +1,7 @@
+import 'package:Web_backoffice/views/Users/user_pie_chart/bike_pie_chart/bike_pie_chart.dart';
+import 'package:Web_backoffice/views/Users/user_pie_chart/none_pie_chart/none_pie_chart.dart';
 import 'package:Web_backoffice/views/Users/user_pie_chart/pie_chart.dart';
+import 'package:Web_backoffice/views/Users/user_pie_chart/user_cars_pie_chart/cars_pie_chart.dart';
 import 'package:Web_backoffice/widgets/custom_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:Web_backoffice/app/constants.dart';
@@ -11,7 +14,7 @@ class UsersView extends StatefulWidget {
 }
 
 class _UsersViewState extends State<UsersView> {
-  int selectedDataSet = 1;
+  int selectedDataSet;
   Widget currentChart = UserPieChart();
   @override
   Widget build(BuildContext context) {
@@ -55,7 +58,7 @@ class _UsersViewState extends State<UsersView> {
                                 currentChart = UserPieChart();
                               })
                             },
-                            child: Text('Cars'),
+                            child: Text('Both'),
                           ),
                         ),
 
@@ -69,10 +72,10 @@ class _UsersViewState extends State<UsersView> {
                               setState((){
                                 this.selectedDataSet = 2;
                                 print("Selected data Set  = 2");
-                                currentChart = UserPieChart();
+                                currentChart = UserCarsPieChart();
                               })
                             },
-                            child: Text('Bikes'),
+                            child: Text('Cars'),
                           ),
                         ),
 
@@ -84,12 +87,12 @@ class _UsersViewState extends State<UsersView> {
                           child: FlatButton(
                             onPressed: () => {
                               setState((){
-                                this.selectedDataSet = 1;
-                                print("Selected data Set  = 1");
-                                currentChart = UserPieChart();
+                                this.selectedDataSet = 3;
+                                print("Selected data Set  = 3");
+                                currentChart = UserBikesPieChart();
                               })
                             },
-                            child: Text('Both'),
+                            child: Text('Bikes'),
                           ),
                         ),
 
@@ -103,7 +106,7 @@ class _UsersViewState extends State<UsersView> {
                               setState((){
                                 this.selectedDataSet = 4;
                                 print("Selected data Set  = 4");
-                                currentChart = UserPieChart();
+                                currentChart = UserNonePieChart();
                               })
                             },
                             child: Text('None'),

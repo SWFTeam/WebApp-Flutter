@@ -1,14 +1,14 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-import '../../../widgets/indicator.dart';
+import '../../../../widgets/indicator.dart';
 
-class UserCarsPieChart extends StatefulWidget {
+class UserBikesPieChart extends StatefulWidget {
   @override
-  _UserCarsPieChartState createState() => _UserCarsPieChartState();
+  _UserBikesPieChartState createState() => _UserBikesPieChartState();
 }
 
-class _UserCarsPieChartState extends State<UserCarsPieChart> {
+class _UserBikesPieChartState extends State<UserBikesPieChart> {
   int touchedIndex;
   @override
   Widget build(BuildContext context) {
@@ -94,7 +94,7 @@ class _UserCarsPieChartState extends State<UserCarsPieChart> {
   }
 
   List<PieChartSectionData> showingSections() {
-    return List.generate(4, (i) {
+    return List.generate(2, (i) {
       final isTouched = i == touchedIndex;
       final double fontSize = isTouched ? 25 : 16;
       final double radius = isTouched ? 60 : 50;
@@ -102,8 +102,8 @@ class _UserCarsPieChartState extends State<UserCarsPieChart> {
         case 0:
           return PieChartSectionData(
             color: Color(0xff0293ee),
-            value: 40,
-            title: '40%',
+            value: 60,
+            title: '60%',
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
@@ -111,8 +111,8 @@ class _UserCarsPieChartState extends State<UserCarsPieChart> {
         case 1:
           return PieChartSectionData(
             color: Color(0xfff8b250),
-            value: 30,
-            title: '30%',
+            value: 40,
+            title: '40%',
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
