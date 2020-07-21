@@ -52,7 +52,7 @@ class _UserCarsPieChartState extends State<UserCarsPieChart> {
               children: const <Widget>[
                 Indicator(
                   color: Color(0xff0293ee),
-                  text: 'First',
+                  text: 'Cars',
                   isSquare: true,
                 ),
                 SizedBox(
@@ -60,23 +60,7 @@ class _UserCarsPieChartState extends State<UserCarsPieChart> {
                 ),
                 Indicator(
                   color: Color(0xfff8b250),
-                  text: 'Second',
-                  isSquare: true,
-                ),
-                SizedBox(
-                  height: 4,
-                ),
-                Indicator(
-                  color: Color(0xff845bef),
-                  text: 'Third',
-                  isSquare: true,
-                ),
-                SizedBox(
-                  height: 4,
-                ),
-                Indicator(
-                  color: Color(0xff13d38e),
-                  text: 'Fourth',
+                  text: 'Others',
                   isSquare: true,
                 ),
                 SizedBox(

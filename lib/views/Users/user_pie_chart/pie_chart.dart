@@ -52,11 +52,6 @@ class _UserPieChartState extends State<UserPieChart> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children:  <Widget>[
-                    FlatButton(
-                        onPressed: ()=>{
-                          print('overhall')
-                    },
-                        child: Text("Salayna Test")),
                     Indicator(
                       color: Color(0xff0293ee),
                       text: 'Cars Owner',
