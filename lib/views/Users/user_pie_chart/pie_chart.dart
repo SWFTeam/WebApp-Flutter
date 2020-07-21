@@ -1,5 +1,3 @@
-import 'package:Web_backoffice/model/User.dart';
-import 'package:Web_backoffice/services/services.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

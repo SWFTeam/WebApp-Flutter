@@ -86,15 +86,6 @@ class _AppDrawerState extends State<AppDrawer> with RouteAware {
                   },
                   selected: _selectedRoute == RoutesNames.challenges,
                 ),
-                ListTile(
-                  leading: const Icon(Icons.announcement) ,
-                  title: const Text("Experimentation") ,
-                  onTap: () async {
-                    await _navigateTo(context, RoutesNames.experiementation);
-                  },
-                  selected: _selectedRoute == RoutesNames.experiementation,
-                ),
-
               ],
             ),
           ),

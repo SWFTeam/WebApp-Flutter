@@ -1,10 +1,9 @@
 import 'package:Web_backoffice/app/routes_names.dart';
-import 'package:Web_backoffice/views/challenges/challenge_item.dart';
 import 'package:Web_backoffice/widgets/custom_scaffold.dart';
 import 'package:flutter/material.dart';
 
 class ChallengesView extends StatelessWidget {
-  bool value = false;
+  //bool value = false;
   @override
   Widget build(BuildContext context) {
     return  CustomScaffold(
@@ -20,7 +19,6 @@ class ChallengesView extends StatelessWidget {
         ],
             rows: [
             DataRow(
-              selected: value,
               onSelectChanged: (value)=>{
                if(value==true){
                  value = false

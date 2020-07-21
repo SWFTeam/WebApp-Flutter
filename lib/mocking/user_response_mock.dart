@@ -1,4 +1,3 @@
-import 'package:Web_backoffice/model/user_alt.dart';
 
 String mockUser(){
   return '''

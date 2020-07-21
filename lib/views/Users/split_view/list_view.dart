@@ -1,5 +1,4 @@
 import 'package:Web_backoffice/model/User.dart';
-import 'package:Web_backoffice/model/user_alt.dart';
 import 'package:Web_backoffice/services/services.dart';
 import 'package:Web_backoffice/views/Users/split_view/user_item.dart';
 import 'package:flutter/material.dart';

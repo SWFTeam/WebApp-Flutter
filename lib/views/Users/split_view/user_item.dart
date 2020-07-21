@@ -1,5 +1,4 @@
 import 'package:Web_backoffice/model/User.dart';
-import 'package:Web_backoffice/model/user_alt.dart';
 import 'package:flutter/material.dart';
 
 class UserItem extends StatelessWidget {
